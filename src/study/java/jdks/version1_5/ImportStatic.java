@@ -1,10 +1,10 @@
 package study.java.jdks.version1_5;
 
 /**
- * ×¢½â
+ * ¾²Ì¬µ¼Èë
  * @author hadoop2
  *
  */
-public class Annotations {
+public class ImportStatic {
 
 }

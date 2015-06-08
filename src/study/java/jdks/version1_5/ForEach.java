@@ -1,10 +1,10 @@
 package study.java.jdks.version1_5;
 
 /**
- * ×¢½â
+ * ¼ò»¯forÑ­»·
  * @author hadoop2
  *
  */
-public class Annotations {
+public class ForEach {
 
 }

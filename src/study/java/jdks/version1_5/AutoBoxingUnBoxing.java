@@ -1,5 +1,10 @@
 package study.java.jdks.version1_5;
 
+/**
+ * 自动装箱与拆箱
+ * @author hadoop2
+ *
+ */
 public class AutoBoxingUnBoxing {
 	
 	public static void main(String[] args) {
