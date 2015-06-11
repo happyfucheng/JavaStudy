@@ -1,4 +1,4 @@
-package study.java.jdks.version1_5;
+package study.java.jdks.version1_5.autoboxingunboxing;
 
 /**
  * 自动装箱与拆箱

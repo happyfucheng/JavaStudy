@@ -1,4 +1,4 @@
-package study.java.jdks.version1_5;
+package study.java.jdks.version1_5.varargs;
 
 public class VarArgs {
 
