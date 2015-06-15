@@ -49,11 +49,17 @@ public class ForEach {
 		}
 		
 		//使用前必须判断是否为null
-		int[] ages=null;
+/*		int[] ages=null;
 		for(int age:ages){
 			System.out.println(age);
-		}
+		}*/
 		
+		// 自定义一个
+		MyForEach<String> myforEach = new MyForEach<String>();
+		myforEach.setValue(new String[]{"11","22","33"});
+		for(String s:myforEach) {
+			System.out.println(s);
+		}
 		
 	}
 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<student>
+		<student_name>Lord</student_name>
+		<student_id>S09080408</student_id>
+		<student_addr>
+			<city>New York</city>
+			<phone>
+				<moble>13865445633</moble>
+			</phone>
+		</student_addr>
+		<courses>
+			<course teacher="Dr.Wang">
+				<course_name>Math</course_name>
+				<score>90</score>
+			</course>
+			<course>
+				<course_name>Chinese</course_name>
+				<score>88</score>
+			</course>
+		</courses>
+	</student>
+	<student>
+		<student_name>Mary</student_name>
+		<student_id>S09080707</student_id>
+		<student_addr>
+			<city>Seattle</city>
+			<phone>
+				<telephone>0456-5462148</telephone>
+			</phone>
+		</student_addr>
+		<courses>
+			<course>
+				<course_name>Math</course_name>
+				<score>100</score>
+			</course>
+		</courses>
+	</student>
+</students>
