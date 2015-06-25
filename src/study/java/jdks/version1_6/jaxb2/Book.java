@@ -10,8 +10,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 /**
- * @author		zhuc
- * @create		2013-3-29 обнГ2:49:48
+ * 
+ * @author hadoop2
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement

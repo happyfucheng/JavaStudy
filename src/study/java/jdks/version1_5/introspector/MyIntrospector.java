@@ -6,7 +6,7 @@ import java.beans.PropertyDescriptor;
 import java.lang.reflect.Method;
 
 /**
- * ÄÚÊ¡
+ * å†…çœ
  * @author hadoop2
  *
  */
@@ -14,7 +14,7 @@ public class MyIntrospector {
     public static void setProperty(UserInfo userInfo,String propertyName)throws Exception{
         PropertyDescriptor propDesc=new PropertyDescriptor(propertyName,UserInfo.class);
         Method methodSetProperty=propDesc.getWriteMethod();
-        System.out.println("»ñÈ¡µÄ·½·¨ÃûÎª:" + methodSetProperty.getName());
+        System.out.println("è·å–çš„æ–¹æ³•åä¸º:" + methodSetProperty.getName());
         methodSetProperty.invoke(userInfo, "wong@126.com");
         getProperty(userInfo,propertyName);
         

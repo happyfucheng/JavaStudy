@@ -10,8 +10,8 @@ public class StAXWriteTest {
 
     public static void writeXML(XMLStreamWriter writer) throws XMLStreamException
     {
-       writer.writeStartDocument("UTF-8", "1.0");//¿ªÊ¼Ğ´ÎÄµµ
-       writer.writeStartElement("", "students");//Ğ´³öÒ»Ğ©ÄÚÈİ
+       writer.writeStartDocument("UTF-8", "1.0");//å¼€å§‹å†™æ–‡æ¡£
+       writer.writeStartElement("", "students");//å†™å‡ºä¸€äº›å†…å®¹
            writer.writeStartElement("student");
               writer.writeStartElement("student_id");
                   writer.writeCharacters("S09080709");
@@ -29,15 +29,15 @@ public class StAXWriteTest {
            writer.writeEndElement();
        writer.writeEndElement();
        writer.writeEndElement();         
-       writer.writeEndDocument();//ÎÄµµĞ´³ö½áÊø
-       writer.flush();//Ë¢ĞÂ»º³å
+       writer.writeEndDocument();//æ–‡æ¡£å†™å‡ºç»“æŸ
+       writer.flush();//åˆ·æ–°ç¼“å†²
     }
     public static void main(String[] args) throws XMLStreamException {
-       XMLOutputFactory xof = XMLOutputFactory.newInstance();//´´½¨Êä³ö¹¤³§   
-       XMLStreamWriter writer = xof.createXMLStreamWriter(System.out,"UTF-8");//´´½¨XMLĞ´³öÁ÷
-       writer.setPrefix("", "");//Ã»Ìá¹©ÌØÊâµÄÇ°×º
-       writeXML(writer);//Ö´ĞĞĞ´ÈëÒ»Ğ©XMLĞÅÏ¢
-       writer.close();//¹Ø±ÕĞ´³öÁ÷
+       XMLOutputFactory xof = XMLOutputFactory.newInstance();//åˆ›å»ºè¾“å‡ºå·¥å‚   
+       XMLStreamWriter writer = xof.createXMLStreamWriter(System.out,"UTF-8");//åˆ›å»ºXMLå†™å‡ºæµ
+       writer.setPrefix("", "");//æ²¡æä¾›ç‰¹æ®Šçš„å‰ç¼€
+       writeXML(writer);//æ‰§è¡Œå†™å…¥ä¸€äº›XMLä¿¡æ¯
+       writer.close();//å…³é—­å†™å‡ºæµ
     }
 }
 

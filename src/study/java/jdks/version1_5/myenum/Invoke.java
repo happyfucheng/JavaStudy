@@ -1,7 +1,7 @@
 package study.java.jdks.version1_5.myenum;
 
 /*
- * Ã¶¾Ù
+ * æšä¸¾
  */
 public class Invoke {
 
@@ -13,23 +13,23 @@ public class Invoke {
 		System.out.println(myred);
 		System.out.println(myred.mytest());
 		
-		// ·µ»ØÃ¶¾ÙÖµÔÚÃ¶¾ÙÀàÖÖµÄË³Ğò¡£Õâ¸öË³Ğò¸ù¾İÃ¶¾ÙÖµÉùÃ÷µÄË³Ğò¶ø¶¨¡£
+		// è¿”å›æšä¸¾å€¼åœ¨æšä¸¾ç±»ç§çš„é¡ºåºã€‚è¿™ä¸ªé¡ºåºæ ¹æ®æšä¸¾å€¼å£°æ˜çš„é¡ºåºè€Œå®šã€‚
 		System.out.println(myred.ordinal());
-		// EnumÊµÏÖÁËjava.lang.Comparable½Ó¿Ú£¬Òò´Ë¿ÉÒÔ±È½ÏÏóÓëÖ¸¶¨¶ÔÏóµÄË³Ğò¡£
-		// EnumÖĞµÄcompareTo·µ»ØµÄÊÇÁ½¸öÃ¶¾ÙÖµµÄË³ĞòÖ®²î¡£µ±È»£¬Ç°ÌáÊÇÁ½¸öÃ¶¾ÙÖµ±ØĞëÊôÓÚÍ¬Ò»¸öÃ¶¾ÙÀà£¬·ñÔò»áÅ×³öClassCastException£¨£©Òì³£
+		// Enumå®ç°äº†java.lang.Comparableæ¥å£ï¼Œå› æ­¤å¯ä»¥æ¯”è¾ƒè±¡ä¸æŒ‡å®šå¯¹è±¡çš„é¡ºåºã€‚
+		// Enumä¸­çš„compareToè¿”å›çš„æ˜¯ä¸¤ä¸ªæšä¸¾å€¼çš„é¡ºåºä¹‹å·®ã€‚å½“ç„¶ï¼Œå‰ææ˜¯ä¸¤ä¸ªæšä¸¾å€¼å¿…é¡»å±äºåŒä¸€ä¸ªæšä¸¾ç±»ï¼Œå¦åˆ™ä¼šæŠ›å‡ºClassCastExceptionï¼ˆï¼‰å¼‚å¸¸
 		System.out.println(myred.compareTo(MyColor.BLUE));
 		System.out.println(red.compareTo(Color.YELLOW));
 		
-		// ±éÀúÃ¶¾ÙÖµ
+		// éå†æšä¸¾å€¼
 		Color[] colors = Color.values();
 		for(Color color:colors) {
 			System.out.println(color);
 		}
 		
-		// valueOf·½·¨
+		// valueOfæ–¹æ³•
 		System.out.println(MyColor.valueOf("RED"));
 		
-		// switchÓï¾äÖĞÅĞ¶ÏÃ¶¾Ù
+		// switchè¯­å¥ä¸­åˆ¤æ–­æšä¸¾
 		Color color = Color.RED;
 		switch(color) {
 		case BLUE:System.out.println("it's blue");break;

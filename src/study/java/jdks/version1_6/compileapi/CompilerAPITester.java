@@ -24,7 +24,7 @@ public class CompilerAPITester {
             Runtime.getRuntime().exec("cmd /c move E:\\eclipse_luna\\aidefaultws\\JavaStudy\\src\\"+JAVA_CLASS_FILE+" E:\\eclipse_luna\\aidefaultws\\JavaStudy\\bin\\");
             
             Thread.sleep(2000);
-            Class.forName(JAVA_CLASS_NAME).newInstance();//创建动态编译得到的DynamicObject类的实例
+            Class.forName(JAVA_CLASS_NAME).newInstance();//鍒涘缓鍔ㄦ�佺紪璇戝緱鍒扮殑DynamicObject绫荤殑瀹炰緥
         } catch (Exception ex) {
             ex.printStackTrace();
         }

@@ -6,7 +6,7 @@ import java.util.Date;
 import javax.xml.bind.JAXBException;
 
 /**
- * ²âÊÔÀà
+ * æµ‹è¯•ç±»
  */
 public class JaxbTest1 {
 
@@ -18,7 +18,7 @@ public class JaxbTest1 {
 		book.setId(100);
 		book.setAuthor("James");
 		book.setCalendar(new Date());
-		book.setPrice(23.45f);	 //Ä¬ÈÏÊÇ0.0
+		book.setPrice(23.45f);	 //é»˜è®¤æ˜¯0.0
 		
 		String str = JaxbUtil.convertToXml(book);
 		System.out.println(str);

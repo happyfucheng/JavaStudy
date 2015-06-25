@@ -20,12 +20,12 @@ public class DesktopTray {
     private static SystemTray st;
     private static PopupMenu pm;
     public static void main(String[] args) {
-        if(Desktop.isDesktopSupported()){//ÅĞ¶Ïµ±Ç°Æ½Ì¨ÊÇ·ñÖ§³ÖDesktopÀà
+        if(Desktop.isDesktopSupported()){//åˆ¤æ–­å½“å‰å¹³å°æ˜¯å¦æ”¯æŒDesktopç±»
             desktop = Desktop.getDesktop();
         }
-        if(SystemTray.isSupported()){//ÅĞ¶Ïµ±Ç°Æ½Ì¨ÊÇ·ñÖ§³ÖÏµÍ³ÍĞÅÌ
+        if(SystemTray.isSupported()){//åˆ¤æ–­å½“å‰å¹³å°æ˜¯å¦æ”¯æŒç³»ç»Ÿæ‰˜ç›˜
             st = SystemTray.getSystemTray();
-            Image image = Toolkit.getDefaultToolkit().getImage("E:\\eclipse_luna\\aidefaultws\\JavaStudy\\src\\study\\java\\jdks\\version1_6\\desktop_systemtray\\asiainfo.png");//¶¨ÒåÍĞÅÌÍ¼±êµÄÍ¼Æ¬            
+            Image image = Toolkit.getDefaultToolkit().getImage("E:\\eclipse_luna\\aidefaultws\\JavaStudy\\src\\study\\java\\jdks\\version1_6\\desktop_systemtray\\asiainfo.png");//å®šä¹‰æ‰˜ç›˜å›¾æ ‡çš„å›¾ç‰‡            
             createPopupMenu();
             TrayIcon ti = new TrayIcon(image, "Desktop Demo Tray", pm);
             try {
@@ -76,35 +76,35 @@ public class DesktopTray {
     
     public static void createPopupMenu(){
        pm = new PopupMenu();
-        MenuItem openBrowser = new MenuItem("´ò¿ª¹Ù·½ÍøÕ¾");
+        MenuItem openBrowser = new MenuItem("æ‰“å¼€å®˜æ–¹ç½‘ç«™");
         openBrowser.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 openBrowser("http://www.asiainfo.com.cn");
             }
         });
         
-        MenuItem sendMail = new MenuItem("·¢ËÍÓÊ¼ş¸øÎÒ");
+        MenuItem sendMail = new MenuItem("å‘é€é‚®ä»¶ç»™æˆ‘");
         sendMail.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 sendMail("mailto:fucheng@asiainfo.com");
             }
         });
         
-        MenuItem edit = new MenuItem("±à¼­ÎÄ±¾ÎÄ¼ş");
+        MenuItem edit = new MenuItem("ç¼–è¾‘æ–‡æœ¬æ–‡ä»¶");
         edit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 edit("fucheng.txt");
             }
         });
         
-        MenuItem editDoc = new MenuItem("±à¼­officeÎÄ¼ş");
+        MenuItem editDoc = new MenuItem("ç¼–è¾‘officeæ–‡ä»¶");
         editDoc.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 edit("fucheng.docx");
             }
         });
         
-        MenuItem exitMenu = new MenuItem("ÍË³ö");
+        MenuItem exitMenu = new MenuItem("é€€å‡º");
         exitMenu.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.exit(0);

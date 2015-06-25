@@ -10,24 +10,24 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
 /**
- * StAX À­Ä£Ê½
+ * StAX æ‹‰æ¨¡å¼
  * @author hadoop2
  *
  */
 public class StAXReadTest {
 
     public static void main(String[] args) throws FileNotFoundException, XMLStreamException {
-       //´´½¨InputStream
+       //åˆ›å»ºInputStream
        InputStream in = new FileInputStream("E:\\eclipse_luna\\aidefaultws\\JavaStudy\\src\\study\\java\\jdks\\version1_6\\stax\\student.xml");
-       XMLInputFactory xif = XMLInputFactory.newInstance();//´´½¨StAX·ÖÎö¹¤³§
-       XMLStreamReader reader = xif.createXMLStreamReader(in);//´´½¨·ÖÎöÆ÷
-       while(reader.hasNext())//µü´ú
+       XMLInputFactory xif = XMLInputFactory.newInstance();//åˆ›å»ºStAXåˆ†æå·¥å‚
+       XMLStreamReader reader = xif.createXMLStreamReader(in);//åˆ›å»ºåˆ†æå™¨
+       while(reader.hasNext())//è¿­ä»£
        {
-           int event = reader.next();//¶ÁÈ¡ÏÂÒ»¸öÊÂ¼ş
-           if(event == XMLStreamReader.START_ELEMENT)//Èç¹ûÕâ¸öÊÂ¼şÊÇÔªËØ¿ªÊ¼
+           int event = reader.next();//è¯»å–ä¸‹ä¸€ä¸ªäº‹ä»¶
+           if(event == XMLStreamReader.START_ELEMENT)//å¦‚æœè¿™ä¸ªäº‹ä»¶æ˜¯å…ƒç´ å¼€å§‹
            {
-              if("student_id".equals(reader.getLocalName()))//ÅĞ¶ÏÔªËØÊÇ²»ÊÇstudent_id
-              {//Èç¹ûÊÇstudent_idÔòÊä³öÔªËØµÄÎÄ±¾ÄÚÈİ
+              if("student_id".equals(reader.getLocalName()))//åˆ¤æ–­å…ƒç´ æ˜¯ä¸æ˜¯student_id
+              {//å¦‚æœæ˜¯student_idåˆ™è¾“å‡ºå…ƒç´ çš„æ–‡æœ¬å†…å®¹
                   System.out.print(reader.getLocalName()+" : ");
                   System.out.println(reader.getElementText());
               }                   

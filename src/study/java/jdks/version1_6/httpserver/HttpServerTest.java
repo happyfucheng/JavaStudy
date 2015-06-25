@@ -8,7 +8,11 @@ import java.net.InetSocketAddress;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
-
+/**
+ * HttpServer
+ * @author hadoop2
+ *
+ */
 public class HttpServerTest{
 	public static void main(String[] args) {
 		

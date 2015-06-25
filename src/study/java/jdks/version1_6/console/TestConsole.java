@@ -7,7 +7,7 @@ public class TestConsole {
 		Console console = System.console();
 		if(console != null) {
 			String user = new String(console.readLine("Enter username:"));
-			// ÊäÈëÃÜÂë£¬ÖÕ¶Ë²»ÏÔÊ¾ÃÜÂë
+			// è¾“å…¥å¯†ç ï¼Œç»ˆç«¯ä¸æ˜¾ç¤ºå¯†ç 
 			String pwd = new String(console.readPassword("Enter password"));
 			console.printf("User name is " + user + "\n");
 			console.printf("Password is " + pwd + "\n");

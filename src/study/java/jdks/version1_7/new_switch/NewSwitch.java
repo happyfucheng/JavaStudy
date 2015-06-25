@@ -25,7 +25,7 @@ public class NewSwitch {
 
 
 /**
- //·´±àÒë´úÂë
+ //åç¼–è¯‘ä»£ç 
  package study.java.jdks.version1_7.new_switch;
 
 import java.io.PrintStream;

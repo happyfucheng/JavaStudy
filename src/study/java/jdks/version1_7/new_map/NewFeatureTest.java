@@ -1,13 +1,16 @@
 package study.java.jdks.version1_7.new_map;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class MapTest {
+public class NewFeatureTest {
 
 	public static void main(String[] args) {
-		// ¶ş½øÖÆ×ÖÃæÁ¿
+		// äºŒè¿›åˆ¶å­—é¢é‡
 		byte nByte=(byte)0b0101;
 		short nShort = (short)0B0010;
 		int nInt = 0b1111;
@@ -17,16 +20,16 @@ public class MapTest {
 		System.out.println(nInt);
 		System.out.println(nLong);
 		
-		// Êı×Ö×ÖÃæÁ¿ÔÊĞíÊ¹ÓÃÏÂ»®Ïß
+		// æ•°å­—å­—é¢é‡å…è®¸ä½¿ç”¨ä¸‹åˆ’çº¿
 		int i = 1_234_576;
 		System.out.println(i);
 		float f = 1_234.55_66_77_88f;
 		System.out.println(f);
 		
-		// ·ºĞÍÊµÀıµÄ´´½¨¿ÉÒÔÍ¨¹ıÀàĞÍÍÆ¶ÏÀ´¼ò»¯
+		// æ³›å‹å®ä¾‹çš„åˆ›å»ºå¯ä»¥é€šè¿‡ç±»å‹æ¨æ–­æ¥ç®€åŒ–
 		List<String> list = new ArrayList<>();
 		
-		// ÔÚ¿É±ä²ÎÊı·½·¨ÖĞ´«µİ·Ç¾ßÌå»¯²ÎÊı,¸Ä½ø±àÒë¾¯¸æºÍ´íÎó
+		// åœ¨å¯å˜å‚æ•°æ–¹æ³•ä¸­ä¼ é€’éå…·ä½“åŒ–å‚æ•°,æ”¹è¿›ç¼–è¯‘è­¦å‘Šå’Œé”™è¯¯
 		
 	
 	}
@@ -46,5 +49,17 @@ public class MapTest {
 	    List<String> ls = l;       // unchecked warning
 	    l.add(0, new Integer(42)); // another unchecked warning
 	    String s = ls.get(0);      // ClassCastException is thrown
+	}
+	
+	public static String readFirstLineFromFile(String path) throws IOException {
+		String result = null;
+		try{
+			BufferedReader br = new BufferedReader(new FileReader(path));
+			result = br.readLine();
+		} catch(Exception e) {
+			
+		} finally{
+			return result;
+		}
 	}
 }

@@ -6,13 +6,13 @@ public class MyGenericWildcard {
 	public static void main(String[] args) {
 		ArrayList<String> as = new ArrayList<String>();
 		ArrayList<Object> ao = null;
-		// ±àÒë±¨´í
+		// ç¼–è¯‘æŠ¥é”™
 		// ao = as;
 		
 		ArrayList<?> ao1 = null;
 		ao1 = as;
 		
-		// ´´½¨¶ÔÏó²»ÄÜÊ¹ÓÃÍ¨Åä·û
+		// åˆ›å»ºå¯¹è±¡ä¸èƒ½ä½¿ç”¨é€šé…ç¬¦
 		//ArrayList<?> xx = new ArrayList<?>();
 	}
 

@@ -17,7 +17,7 @@ public class MapIteratorCompare {
 			String key = keySetI.next();
 			String value = map.get(key);
 		}
-		System.out.println("通过KeySet遍历耗时:" + (System.currentTimeMillis() - startTime2) + "ms");
+		System.out.println("閫氳繃KeySet閬嶅巻鑰楁椂:" + (System.currentTimeMillis() - startTime2) + "ms");
 		
 		
 		long startTime1 = System.currentTimeMillis();
@@ -27,11 +27,11 @@ public class MapIteratorCompare {
 			String key = entry.getKey();
 			String value = entry.getValue();
 		}
-		System.out.println("通过EntrySety遍历耗时:" + (System.currentTimeMillis() - startTime1) + "ms");
+		System.out.println("閫氳繃EntrySety閬嶅巻鑰楁椂:" + (System.currentTimeMillis() - startTime1) + "ms");
 		
-		//测试结果：map元素1000000时，entrySet更快
-		//通过KeySet遍历耗时:54ms
-		//通过EntrySety遍历耗时:37ms
+		//娴嬭瘯缁撴灉锛歮ap鍏冪礌1000000鏃讹紝entrySet鏇村揩
+		//閫氳繃KeySet閬嶅巻鑰楁椂:54ms
+		//閫氳繃EntrySety閬嶅巻鑰楁椂:37ms
 
 		
 	}

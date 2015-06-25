@@ -8,13 +8,13 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 /**
- * Jaxb2¹¤¾ßÀà
+ * Jaxb2å·¥å…·ç±»
  */
 public class JaxbUtil {
 
 	/**
-	 * JavaBean×ª»»³Éxml
-	 * Ä¬ÈÏ±àÂëUTF-8
+	 * JavaBeanè½¬æ¢æˆxml
+	 * é»˜è®¤ç¼–ç UTF-8
 	 * @param obj
 	 * @param writer
 	 * @return 
@@ -24,7 +24,7 @@ public class JaxbUtil {
 	}
 
 	/**
-	 * JavaBean×ª»»³Éxml
+	 * JavaBeanè½¬æ¢æˆxml
 	 * @param obj
 	 * @param encoding 
 	 * @return 
@@ -48,7 +48,7 @@ public class JaxbUtil {
 	}
 
 	/**
-	 * xml×ª»»³ÉJavaBean
+	 * xmlè½¬æ¢æˆJavaBean
 	 * @param xml
 	 * @param c
 	 * @return

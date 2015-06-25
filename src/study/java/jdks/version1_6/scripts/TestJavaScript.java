@@ -23,12 +23,12 @@ public class TestJavaScript {
         while(input.hasNext()) {
         	int first = input.nextInt();
         	int sec = input.nextInt();
-        	System.out.println("ÊäÈëµÄ²ÎÊıÎª:" + first + "," + sec);
+        	System.out.println("è¾“å…¥çš„å‚æ•°ä¸º:" + first + "," + sec);
         	engine.eval(new FileReader("E:\\eclipse_luna\\aidefaultws\\JavaStudy\\src\\study\\java\\jdks\\version1_6\\scripts\\cal.js"));
         	if(engine instanceof Invocable) {
         		Invocable in = (Invocable)engine;
         		Double result = (Double)in.invokeFunction("cal", first,sec);
-        		System.out.println("ÔËËã½á¹ûÎª:" + result.intValue());
+        		System.out.println("è¿ç®—ç»“æœä¸º:" + result.intValue());
         	}
         }
 

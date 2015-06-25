@@ -10,49 +10,49 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 /**
- * Sax Á÷´¦ÀíÄ£Ê½µÄÍÆÄ£Ê½
+ * Sax æµå¤„ç†æ¨¡å¼çš„æ¨æ¨¡å¼
  * @author hadoop2
  *
  */
 public class SaxReadTest {
 	public static void main(String[] args) throws ParserConfigurationException,
 			SAXException, IOException {
-		SAXParserFactory spf = SAXParserFactory.newInstance();// ´´½¨SAX½âÎöÆ÷¹¤³§
-		spf.setNamespaceAware(true);// ÉèÖÃÃû³Æ¿Õ¼äÊôĞÔ
-		SAXParser sp = spf.newSAXParser();// ´´½¨½âÎöÆ÷
-		// ¿ªÊ¼½âÎö
+		SAXParserFactory spf = SAXParserFactory.newInstance();// åˆ›å»ºSAXè§£æå™¨å·¥å‚
+		spf.setNamespaceAware(true);// è®¾ç½®åç§°ç©ºé—´å±æ€§
+		SAXParser sp = spf.newSAXParser();// åˆ›å»ºè§£æå™¨
+		// å¼€å§‹è§£æ
 		sp.parse(new File("E:\\eclipse_luna\\aidefaultws\\JavaStudy\\src\\study\\java\\jdks\\version1_6\\stax\\student.xml"),
 
 		new DefaultHandler() {
-			boolean isStudentId = false;// ÊÇ·ñÊÇÑ§ºÅĞÅÏ¢
+			boolean isStudentId = false;// æ˜¯å¦æ˜¯å­¦å·ä¿¡æ¯
 
 			@Override
 			public void startElement(String uri, String localName,
 					String qName, Attributes attributes) throws SAXException {
 				super.startElement(uri, localName, qName, attributes);
 				//System.out.println(uri+"==="+ localName+"==="+ qName);
-				if ("student_id".equals(localName))// Èç¹û½ÓÊÕµ½µÄÔªËØÊÇstudent_id
+				if ("student_id".equals(localName))// å¦‚æœæ¥æ”¶åˆ°çš„å…ƒç´ æ˜¯student_id
 				{
-					isStudentId = true;// ±ê¼ÇÕâ¸öÊÇÑ§ºÅĞÅÏ¢£¬ÔÚ½ÓÊÕ×Ö·ûĞÅÏ¢Ê±ĞèÒªÊä³öÑ§ºÅ
-					System.out.print(localName + " : ");// Êä³öÔªËØÃû³Æ
+					isStudentId = true;// æ ‡è®°è¿™ä¸ªæ˜¯å­¦å·ä¿¡æ¯ï¼Œåœ¨æ¥æ”¶å­—ç¬¦ä¿¡æ¯æ—¶éœ€è¦è¾“å‡ºå­¦å·
+					System.out.print(localName + " : ");// è¾“å‡ºå…ƒç´ åç§°
 				}
 			}
 
 			@Override
-			public void characters(char[] ch, int start, int length)// ½ÓÊÕµ½×Ö·ûĞÅÏ¢
+			public void characters(char[] ch, int start, int length)// æ¥æ”¶åˆ°å­—ç¬¦ä¿¡æ¯
 					throws SAXException {
 				super.characters(ch, start, length);
-				if (isStudentId)// Èç¹ûµ±Ç°ĞÅÏ¢ÊÇÑ§ºÅ
+				if (isStudentId)// å¦‚æœå½“å‰ä¿¡æ¯æ˜¯å­¦å·
 				{
-					System.out.println(new String(ch, start, length));// Êä³öÕâ¸öÑ§ºÅ
+					System.out.println(new String(ch, start, length));// è¾“å‡ºè¿™ä¸ªå­¦å·
 				}
 			}
 
 			@Override
-			public void endElement(String uri, String localName, String qName)// ÔªËØÖÕÖ¹
+			public void endElement(String uri, String localName, String qName)// å…ƒç´ ç»ˆæ­¢
 					throws SAXException {
 				super.endElement(uri, localName, qName);
-				isStudentId = false;// ±ê¼Çµ±Ç°ÔªËØ²»ÊÇÑ§ºÅ
+				isStudentId = false;// æ ‡è®°å½“å‰å…ƒç´ ä¸æ˜¯å­¦å·
 			}
 		});
 	}

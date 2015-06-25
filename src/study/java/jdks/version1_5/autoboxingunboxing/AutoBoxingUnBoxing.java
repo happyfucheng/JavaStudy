@@ -1,7 +1,7 @@
 package study.java.jdks.version1_5.autoboxingunboxing;
 
 /**
- * ×Ô¶¯×°ÏäÓë²ğÏä
+ * è‡ªåŠ¨è£…ç®±ä¸æ‹†ç®±
  * @author hadoop2
  *
  */
@@ -12,21 +12,21 @@ public class AutoBoxingUnBoxing {
 		Integer b = 297;
 		System.out.println(a==b);
 		
-		//-128~127(FlyWeightÄ£Ê½)
+		//-128~127(FlyWeightæ¨¡å¼)
 		Integer c = 111;
 		Integer d = 111;
 		System.out.println(c==d);
 
 		
-		// ×Ô¶¯×°Ïä
+		// è‡ªåŠ¨è£…ç®±
 		Integer data1 = 10; 
 		Integer data2 = 20; 
-		// ×ªÎªdoubleÖµÔÙ³ıÒÔ3 
+		// è½¬ä¸ºdoubleå€¼å†é™¤ä»¥3 
 		System.out.println(data1.doubleValue() / 3); 
-		// ½øĞĞÁ½¸öÖµµÄ±È½Ï 
+		// è¿›è¡Œä¸¤ä¸ªå€¼çš„æ¯”è¾ƒ 
 		System.out.println(data1.compareTo(data2));
 		
-		// ×Ô¶¯²ğÏä
+		// è‡ªåŠ¨æ‹†ç®±
 		Integer data3 = new Integer(255);
 		System.out.println(data3 + 5);
 	}

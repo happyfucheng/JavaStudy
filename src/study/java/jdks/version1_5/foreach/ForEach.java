@@ -6,7 +6,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 /**
- * ¼ò»¯forÑ­»·
+ * ç®€åŒ–forå¾ªç¯
  * @author hadoop2
  *
  */
@@ -14,20 +14,20 @@ public class ForEach {
 	
 	public static void main(String[] args) {
 		
-		//±éÀúÊı×éºÍÊµÏÖÁËIterator½Ó¿ÚµÄ
+		//éå†æ•°ç»„å’Œå®ç°äº†Iteratoræ¥å£çš„
 		
 		
-		// ±éÀúÊı×é
+		// éå†æ•°ç»„
 		String[] names = new String[]{"zhangsan","lisi","wangwu","zhaoliu"};
 		
-		// ²»ÒªÆÚ´ıÄÜ¸Ä±äÊı×éÔªËØµÄÖµ
+		// ä¸è¦æœŸå¾…èƒ½æ”¹å˜æ•°ç»„å…ƒç´ çš„å€¼
 		for(String name:names) {
 			name="fucheng";
 		}
 		System.out.println(names[0]);
 		
 		
-		// ±éÀúSet
+		// éå†Set
 		Set<String> set = new TreeSet<String>();
 		set.add("e1");
 		set.add("e2");
@@ -37,7 +37,7 @@ public class ForEach {
 			System.out.println(s);
 		}
 		
-		// ±éÀúMap
+		// éå†Map
 		Map<String,String> map = new HashMap<String,String>();
 		map.put("k1", "value1");
 		map.put("k2", "value2");
@@ -48,13 +48,13 @@ public class ForEach {
 			
 		}
 		
-		//Ê¹ÓÃÇ°±ØĞëÅĞ¶ÏÊÇ·ñÎªnull
+		//ä½¿ç”¨å‰å¿…é¡»åˆ¤æ–­æ˜¯å¦ä¸ºnull
 /*		int[] ages=null;
 		for(int age:ages){
 			System.out.println(age);
 		}*/
 		
-		// ×Ô¶¨ÒåÒ»¸ö
+		// è‡ªå®šä¹‰ä¸€ä¸ª
 		MyForEach<String> myforEach = new MyForEach<String>();
 		myforEach.setValue(new String[]{"11","22","33"});
 		for(String s:myforEach) {

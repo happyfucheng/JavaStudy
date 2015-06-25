@@ -1,4 +1,4 @@
-BeanUtils.copyPropertiesÔ´Âë
+BeanUtils.copyPropertiesæºç 
 
 
 	private static void copyProperties(Object source, Object target, Class<?> editable, String[] ignoreProperties)

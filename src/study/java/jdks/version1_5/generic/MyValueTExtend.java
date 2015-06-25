@@ -15,7 +15,7 @@ public class MyValueTExtend<T extends Number&Comparable&Serializable> {
 	
 	public static void main(String[] args) {
 		
-		//±àÒë±¨´í
+		//ç¼–è¯‘æŠ¥é”™
 		//MyValueTExtend<String> my = new MyValueTExtend<String>();
 		
 		MyValueTExtend<Integer> my = new MyValueTExtend<Integer>();

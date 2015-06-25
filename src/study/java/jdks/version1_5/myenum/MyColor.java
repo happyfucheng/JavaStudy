@@ -1,5 +1,10 @@
 package study.java.jdks.version1_5.myenum;
 
+/**
+ * 带成员变量的枚举类
+ * @author hadoop2
+ *
+ */
 public enum MyColor {
 	RED(255,0,0),BLUE(0,0,255);
 	private MyColor(int rv,int gv,int bv) {

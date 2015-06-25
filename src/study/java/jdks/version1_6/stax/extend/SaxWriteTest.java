@@ -118,7 +118,7 @@ public class SaxWriteTest {
     public static void main(String[] args) throws TransformerException {
        TransformerFactory tff = TransformerFactory.newInstance();
        Transformer tf = tff.newTransformer();
-       tf.setOutputProperty(OutputKeys.INDENT, "yes");//ÉèÖÃ×ª»»µÄÊôĞÔ
+       tf.setOutputProperty(OutputKeys.INDENT, "yes");//è®¾ç½®è½¬æ¢çš„å±æ€§
        tf.setOutputProperty(OutputKeys.METHOD, "xml");
        tf.transform(new SAXSource(new SAXReaderImpl(),null), new StreamResult(System.out));
     }

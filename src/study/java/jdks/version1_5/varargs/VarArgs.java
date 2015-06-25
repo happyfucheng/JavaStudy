@@ -3,7 +3,7 @@ package study.java.jdks.version1_5.varargs;
 public class VarArgs {
 
 
-// 优先级高
+// 浼樺厛绾ч珮
 public static int add(int x,int y) {
 	return 0;
 }
@@ -17,7 +17,7 @@ public static int add(int x,int...args) {
 }
 
 
-public static void main(String[] args) {
+public static void main(String...args) {
 	
 	System.out.println(add(2,6));
 	System.out.println(add(2));

@@ -1,5 +1,12 @@
 package study.java.jdks.version1_5.generic;
 
+/**
+ * 泛型类
+ * @author hadoop2
+ *
+ * @param <T>
+ * @param <U>
+ */
 public class MyValue<T,U> {
 	private T value1;
 	private U Value2;

@@ -1,4 +1,4 @@
-package study.java.jdks.version1_5.foreach;
+﻿package study.java.jdks.version1_5.foreach;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -17,7 +17,7 @@ public class MyForEach<T> implements Iterable<T>{
 	public T[] getValue() {
 		return value;
 	}
-
+	
 	public void setValue(T[] value) {
 		this.value = value;
 	}

@@ -1,5 +1,10 @@
 package study.java.jdks.version1_5.generic;
 
+/**
+ * 泛型方法
+ * @author hadoop2
+ *
+ */
 public class MyGenericMethod {
 	public static <T> T getLast(T[] a) {
 		return a[a.length-1];

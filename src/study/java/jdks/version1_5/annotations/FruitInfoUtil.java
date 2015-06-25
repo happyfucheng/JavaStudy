@@ -5,9 +5,9 @@ import java.lang.reflect.Field;
 public class FruitInfoUtil {
     public static void getFruitInfo(Class<?> clazz){
         
-        String strFruitName=" Ë®¹ûÃû³Æ£º";
-        String strFruitColor=" Ë®¹ûÑÕÉ«£º";
-        String strFruitProvicer="¹©Ó¦ÉÌĞÅÏ¢£º";
+        String strFruitName=" æ°´æœåç§°ï¼š";
+        String strFruitColor=" æ°´æœé¢œè‰²ï¼š";
+        String strFruitProvicer="ä¾›åº”å•†ä¿¡æ¯ï¼š";
         
         Field[] fields = clazz.getDeclaredFields();
         
@@ -24,7 +24,7 @@ public class FruitInfoUtil {
             }
             else if(field.isAnnotationPresent(FruitProvider.class)){
                 FruitProvider fruitProvider= (FruitProvider) field.getAnnotation(FruitProvider.class);
-                strFruitProvicer=" ¹©Ó¦ÉÌ±àºÅ£º"+fruitProvider.id()+" ¹©Ó¦ÉÌÃû³Æ£º"+fruitProvider.name()+" ¹©Ó¦ÉÌµØÖ·£º"+fruitProvider.address();
+                strFruitProvicer=" ä¾›åº”å•†ç¼–å·ï¼š"+fruitProvider.id()+" ä¾›åº”å•†åç§°ï¼š"+fruitProvider.name()+" ä¾›åº”å•†åœ°å€ï¼š"+fruitProvider.address();
                 System.out.println(strFruitProvicer);
             }
         }

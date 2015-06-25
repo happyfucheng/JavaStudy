@@ -9,7 +9,7 @@ public class Testing{
     @ToBeTested(group="B",owner="QQ")
     public void m2(){
     }    
-    @PostConstruct  //Common Annotation里面的一个Annotation
+    @PostConstruct  //Common Annotation閲岄潰鐨勪竴涓狝nnotation
     public void m3(){
     }    
 }

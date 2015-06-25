@@ -17,32 +17,32 @@ import javax.lang.model.element.TypeElement;
 import javax.lang.model.util.ElementFilter;
 import javax.tools.Diagnostic;
 
-@SupportedAnnotationTypes("PluggableAPT.ToBeTested")//¿ÉÒÔÓÃ"*"±íÊ¾Ö§³ÖËùÓĞAnnotations
+@SupportedAnnotationTypes("PluggableAPT.ToBeTested")//å¯ä»¥ç”¨"*"è¡¨ç¤ºæ”¯æŒæ‰€æœ‰Annotations
 @SupportedSourceVersion(SourceVersion.RELEASE_6)
 public class MyAnnotationProcessor extends AbstractProcessor {
    private void note(String msg) {
        processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE, msg);
    }
    public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
-       //annotationsµÄÖµÊÇÍ¨¹ı@SupportedAnnotationTypesÉùÃ÷µÄÇÒÄ¿±êÔ´´úÂëÓµÓĞµÄËùÓĞAnnotations
+       //annotationsçš„å€¼æ˜¯é€šè¿‡@SupportedAnnotationTypeså£°æ˜çš„ä¸”ç›®æ ‡æºä»£ç æ‹¥æœ‰çš„æ‰€æœ‰Annotations
        for(TypeElement te:annotations){
            note("annotation:"+te.toString());
        }
-       Set<? extends Element> elements = roundEnv.getRootElements();//»ñÈ¡Ô´´úÂëµÄÓ³Éä¶ÔÏó
+       Set<? extends Element> elements = roundEnv.getRootElements();//è·å–æºä»£ç çš„æ˜ å°„å¯¹è±¡
        for(Element e:elements){
-           //»ñÈ¡Ô´´úÂë¶ÔÏóµÄ³ÉÔ±
+           //è·å–æºä»£ç å¯¹è±¡çš„æˆå‘˜
            List<? extends Element> enclosedElems = e.getEnclosedElements();
-           //ÁôÏÂ·½·¨³ÉÔ±,¹ıÂËµôÆäËû³ÉÔ±
+           //ç•™ä¸‹æ–¹æ³•æˆå‘˜,è¿‡æ»¤æ‰å…¶ä»–æˆå‘˜
            List<? extends ExecutableElement> ees = ElementFilter.methodsIn(enclosedElems);
            for(ExecutableElement ee:ees){
                note("--ExecutableElement name is "+ee.getSimpleName());
-               List<? extends AnnotationMirror> as = ee.getAnnotationMirrors();//»ñÈ¡·½·¨µÄAnnotations
+               List<? extends AnnotationMirror> as = ee.getAnnotationMirrors();//è·å–æ–¹æ³•çš„Annotations
                note("--as="+as); 
                for(AnnotationMirror am:as){
-                   //»ñÈ¡AnnotationµÄÖµ
+                   //è·å–Annotationçš„å€¼
                    Map<? extends ExecutableElement, ? extends AnnotationValue> map= am.getElementValues();
                    Set<? extends ExecutableElement> ks = map.keySet();
-                   for(ExecutableElement k:ks){//´òÓ¡AnnotationµÄÃ¿¸öÖµ
+                   for(ExecutableElement k:ks){//æ‰“å°Annotationçš„æ¯ä¸ªå€¼
                        AnnotationValue av = map.get(k);
                        note("----"+ee.getSimpleName()+"."+k.getSimpleName()+"="+av.getValue());
                    }
