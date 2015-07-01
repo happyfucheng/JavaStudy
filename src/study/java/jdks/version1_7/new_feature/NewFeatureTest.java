@@ -1,7 +1,9 @@
-package study.java.jdks.version1_7.new_map;
+package study.java.jdks.version1_7.new_feature;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +11,7 @@ import java.util.List;
 
 public class NewFeatureTest {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
 		// 二进制字面量
 		byte nByte=(byte)0b0101;
 		short nShort = (short)0B0010;
@@ -31,6 +33,13 @@ public class NewFeatureTest {
 		
 		// 在可变参数方法中传递非具体化参数,改进编译警告和错误
 		
+		try{
+			File a= new File("xx.txt");
+			FileWriter fw = new FileWriter(a);
+		} catch(IOException|RuntimeException e) {
+			System.out.println(e);
+			throw e;
+		}
 	
 	}
 	

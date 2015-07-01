@@ -10,7 +10,7 @@ import static java.lang.String.valueOf;
  *
  */
 public class ImportStatic {
-	public static void main(String [] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException {
 		sleep(1000);
 		out.println("static void");
 		out.println(RED);
