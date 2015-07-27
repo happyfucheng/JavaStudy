@@ -11,6 +11,10 @@ public class Testing{
     }    
     @PostConstruct  //Common Annotation里面的一个Annotation
     public void m3(){
-    }    
+    }
+    
+    public void m4(){
+    	
+    }
 }
 

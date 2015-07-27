@@ -11,5 +11,11 @@ annotation等Java语言元素映射为Types和Elements(两者有什么区别?), 
   直到没有新代码产生为止.每执行一次process()方法被称为一个"round",这样整个Annotation 
   processing过程可以看作是一个round的序列. JSR 269主要被设计成为针对Tools或者容器的API.
    举个例子,我们想建立一套基于Annotation的单元测试框架(如TestNG),在测试类里面用Annotation
-   来标识测试期间需要执行的测试方法,如下所示:
+
+
+
+
+set path=C:\Program Files\Java\jdk1.8.0_45\bin
+set classpath=E:\eclipse_luna\aidefaultws\JavaStudy\bin
+javac -processor study.java.jdks.version1_6.pluggable_annotation.MyAnnotationProcessor E:\eclipse_luna\aidefaultws\JavaStudy\src\study\java\jdks\version1_6\pluggable_annotation\Testing.java
 

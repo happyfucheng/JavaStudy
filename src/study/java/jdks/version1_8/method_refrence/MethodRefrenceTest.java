@@ -20,7 +20,7 @@ public class MethodRefrenceTest {
 		System.out.println(converter1.convert("123") + 123);
 		System.out.println(converter2.convert(123) + "123");
 		
-		// 注意Person必须是一个函数式接口
+		// 注意PersonFactory必须是一个函数式接口
 		PersonFactory<Person> personFactory = Person::new;
 		Person person = personFactory.create("fu", "cheng");
 		System.out.println(person.getFirstName() + person.getLastName());

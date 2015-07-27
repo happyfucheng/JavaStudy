@@ -17,8 +17,12 @@ import javax.lang.model.element.TypeElement;
 import javax.lang.model.util.ElementFilter;
 import javax.tools.Diagnostic;
 
-@SupportedAnnotationTypes("PluggableAPT.ToBeTested")//可以用"*"表示支持所有Annotations
-@SupportedSourceVersion(SourceVersion.RELEASE_6)
+import jdk.nashorn.internal.runtime.regexp.RegExp;
+import jdk.nashorn.internal.runtime.regexp.RegExpMatcher;
+
+@SupportedAnnotationTypes("study.java.jdks.version1_6.pluggable_annotation.ToBeTested")//可以用"*"表示支持所有Annotations
+//@SupportedAnnotationTypes("*")
+@SupportedSourceVersion(SourceVersion.RELEASE_8)
 public class MyAnnotationProcessor extends AbstractProcessor {
    private void note(String msg) {
        processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE, msg);
@@ -29,12 +33,15 @@ public class MyAnnotationProcessor extends AbstractProcessor {
            note("annotation:"+te.toString());
        }
        Set<? extends Element> elements = roundEnv.getRootElements();//获取源代码的映射对象
+      // elements.add(null);
        for(Element e:elements){
            //获取源代码对象的成员
            List<? extends Element> enclosedElems = e.getEnclosedElements();
            //留下方法成员,过滤掉其他成员
            List<? extends ExecutableElement> ees = ElementFilter.methodsIn(enclosedElems);
            for(ExecutableElement ee:ees){
+        	   //if(methodName.tr)
+        	   
                note("--ExecutableElement name is "+ee.getSimpleName());
                List<? extends AnnotationMirror> as = ee.getAnnotationMirrors();//获取方法的Annotations
                note("--as="+as); 

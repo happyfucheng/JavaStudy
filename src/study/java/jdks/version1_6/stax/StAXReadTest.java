@@ -21,6 +21,7 @@ public class StAXReadTest {
        InputStream in = new FileInputStream("E:\\eclipse_luna\\aidefaultws\\JavaStudy\\src\\study\\java\\jdks\\version1_6\\stax\\student.xml");
        XMLInputFactory xif = XMLInputFactory.newInstance();//创建StAX分析工厂
        XMLStreamReader reader = xif.createXMLStreamReader(in);//创建分析器
+       System.out.println(reader.getClass().getName());
        while(reader.hasNext())//迭代
        {
            int event = reader.next();//读取下一个事件
