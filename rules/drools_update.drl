@@ -1,0 +1,45 @@
+package com.ai.drools.insert
+import com.ai.study.drools.Customer;
+import com.ai.study.drools.Order;
+
+function void printLog(String str){
+	System.out.println(str);
+}
+rule "insert"
+    salience 199
+    //lock-on-active true
+    when
+       eval(true)
+    then
+    	printLog("===========");
+        Customer cus=new Customer();
+		cus.setName("张三");
+		cus.setAge(1);
+		insert(cus);
+end
+
+rule "update"
+    salience 97
+   // no-loop true
+    when
+       $customer:Customer(name =="张三",age<10);
+    then
+    	$customer.setAge($customer.getAge()+1);
+    	printLog("update----"+$customer.getName()+",age:"+$customer.getAge());
+    	update($customer);        
+end
+
+rule "update_drools"
+    salience 96
+    lock-on-active true
+    //no-loop true
+    when
+       $customer:Customer(name =="张三");
+    then
+		Customer customer=new Customer();
+		customer.setName("张三");
+		customer.setAge($customer.getAge()+1);
+		update(drools.getWorkingMemory().getFactHandleByIdentity($customer),customer);
+        printLog("update_drools----"+$customer.getAge());
+        
+end

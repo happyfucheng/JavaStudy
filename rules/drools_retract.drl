@@ -1,0 +1,37 @@
+package com.ai.drools.insert
+import com.ai.study.drools.Customer;
+import com.ai.study.drools.Order;
+
+rule "insert"
+    salience 199
+    //lock-on-active true
+    when
+       eval(true)
+    then
+    	System.out.println("===========");
+        Customer cus=new Customer();
+		cus.setName("张三");
+		cus.setAge(1);
+		insert(cus);
+end
+
+rule "retract"
+    salience 83
+	//lock-on-active true
+    when
+         $customer:Customer(name =="张三",age<10);
+    then
+    	System.out.println($customer.getAge());
+        retract($customer);
+
+end
+
+rule "retract1"
+    salience 82
+	//lock-on-active true
+    when
+         $customer:Customer();
+    then
+    	System.out.println("=====age:"+$customer.getAge());
+
+end
