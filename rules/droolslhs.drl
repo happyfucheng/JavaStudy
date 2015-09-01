@@ -1,0 +1,48 @@
+package com.ai.drools.lhs
+import com.ai.study.drools.Customer;
+import com.ai.study.drools.Order;
+import java.util.List;
+global List orderNames;
+
+rule "rule1"
+    when
+        $customer:Customer(age>20,gender=='male')
+		Order(customer==$customer,price>1000)
+    then
+        //orderNames.add("test");
+		System.out.println($customer.getAge());
+end
+
+rule "rule2"
+    when
+       $customer:Customer(age>20||gender=='male' && city=='sh');
+    then
+        System.out.println($customer.getCity());
+        $customer.setAge(30);
+
+end
+
+rule "contains"
+    when
+     	$order:Order();
+		$customer:Customer(age >20, orders contains $order);
+    then
+        System.out.println("contains======="+$customer.getCity());
+
+end
+
+rule "memberOf"
+    when
+		$order:Order(name memberOf orderNames);
+    then
+        System.out.println("memberOf======"+$order.getName());
+
+end
+
+rule "matches"
+    when
+		$order:Order(name matches "test*");
+    then
+        System.out.println("matches======="+$order.getName());
+
+end

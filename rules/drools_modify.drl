@@ -1,0 +1,40 @@
+package com.ai.drools.insert
+import com.ai.study.drools.Customer;
+import com.ai.study.drools.Order;
+
+rule "insert"
+    salience 199
+    //lock-on-active true
+    when
+       eval(true)
+    then
+    	System.out.println("===========");
+        Customer cus=new Customer();
+		cus.setName("张三");
+		cus.setAge(1);
+		insert(cus);
+end
+
+rule "modify"
+    salience 81
+	//lock-on-active true
+    when
+       $customer:Customer(name =="张三",age<10);
+    then
+        modify($customer){
+			setName("super man"),
+			setAge(5)
+		}
+    	System.out.println($customer.getAge());
+
+end
+
+rule "modify_rhs"
+	salience 80
+    //lock-on-active true
+    when
+       $customer:Customer(name =="super man");
+    then
+       System.out.println("modify after customer name:"+$customer.getName()+";age:"+$customer.getAge());
+
+end

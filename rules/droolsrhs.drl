@@ -1,0 +1,98 @@
+package com.ai.drools.rhs
+import com.ai.study.drools.Customer;
+import com.ai.study.drools.Order;
+import java.util.List;
+
+rule "insert"
+    salience 199
+   // lock-on-active true
+    when
+       eval(true)
+    then
+    	System.out.println("===========");
+        Customer cus=new Customer();
+		cus.setName("张三");
+		cus.setAge(1);
+		insert(cus);
+end
+
+
+rule "insert_rhs"
+     salience 196
+    lock-on-active true
+    when
+       $customer:Customer(name =="张三");
+    then
+        System.out.println("insert_rhs----"+$customer.getAge());
+end
+
+rule "update"
+    salience 97
+    //no-loop true
+    when
+       $customer:Customer(name =="张三",age<10);
+    then
+    	$customer.setAge($customer.getAge()+1);
+    	System.out.println("update----"+$customer.getName());
+    	update($customer);
+        
+end
+
+rule "update_drools"
+    salience 96
+   // lock-on-active true
+    when
+       $customer:Customer(name =="张三",age<10);
+    then
+		Customer customer=new Customer();
+		customer.setName("张三");
+		customer.setAge($customer.getAge()+1);
+		update(drools.getWorkingMemory().getFactHandleByIdentity($customer),customer);
+        System.out.println("update_drools----"+$customer.getAge());
+        
+end
+
+rule "retract"
+    salience 83
+	//lock-on-active true
+    when
+         $customer:Customer(name =="张三",age<10);
+    then
+        retract($customer);
+
+end
+
+rule "drools"
+    salience 82
+    lock-on-active true
+    when
+        eval(true)
+    then
+        Customer cus=new Customer();
+		cus.setName("张三");
+		drools.insert(cus);
+
+end
+
+rule "modify"
+    salience 81
+	//lock-on-active true
+    when
+       $customer:Customer(name =="张三",age<10);
+    then
+        modify($customer){
+			setName("super man"),
+			setAge(5)
+		}
+
+end
+
+rule "modify_rhs"
+	salience 80
+    lock-on-active true
+    when
+       $customer:Customer(name =="super man");
+    then
+       System.out.println("modify after customer name:"+$customer.getName()+";age:"+$customer.getAge());
+
+end

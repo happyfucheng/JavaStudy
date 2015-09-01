@@ -1,0 +1,72 @@
+//created on: 2015-8-4
+package com.ai.drools.factdef
+import com.ai.study.drools.Order;
+
+import java.util.Date;
+declare Address
+	city : String
+	addressName : String
+end
+declare Person
+	name:String
+	birthday:Date
+	address:Address //使用declare声明的对象作为address属性类型
+	order:Order //使用名为Order的JavaBean作为order属性类型
+end
+
+
+
+declare User
+	@author(qiao)
+	@createTime(2015-7-25)
+	username : String @maxLenth(30)
+	userid : String
+	birthday : java.util.Date
+end
+
+
+rule "rule1"
+	salience 10
+	when
+	   eval(true);
+	then
+		#使用定义的Address对象，并利用insert操作符将其插入到当前的WorkingMemory当中
+		Address add=new Address();
+		add.setCity("中国上海");
+		add.setAddressName("中国上海松江区");
+		Order order=new Order();
+		order.setName("测试订单");
+		Person person=new Person();
+		person.setName("高杰");
+		person.setBirthday(new Date());
+		person.setAddress(add);//将Address对象的实例赋给address属性
+		person.setOrder(order);//将Order对象实例赋给order属性
+		insert(person);
+end
+rule "rule2"
+	salience 9
+	when
+		$person:Person()
+	then
+	System.out.println("姓名:"+$person.getName()+"\r住址："+$person.getAddress().getAddressName()+"\r拥有的订单："+$person.getOrder().getName());
+end
+
+
+rule "rule3"
+	salience 10
+	when
+	   eval(true);
+	then
+		User add=new User();
+		add.setUsername("qiao");
+		add.setUserid("1");
+		insert(add);
+end
+
+rule "rule4"
+	salience 9
+	when
+		$user:User()
+	then
+	System.out.println("姓名:"+$user.getUsername()+"\r住址："+$user.getUserid());
+end
