@@ -3,7 +3,10 @@ package study.java.hanyx.mongodb.test;
 import java.util.Date;
 
 import org.bson.Document;
+import org.bson.conversions.Bson;
+import org.bson.types.ObjectId;
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
@@ -21,10 +24,13 @@ public class TestMongoClient {
 	
 	public static void main(String[] args) {
 		insertData();
-//		find();
-//		findWithCondtion();
-//		removeData();
-//		updateData();
+		find();
+		findById();
+		findWithCondtion();
+		findWithCondtions();
+		removeData();
+		updateData();
+		findByPage();
 	}
 	
 	/**
@@ -34,7 +40,7 @@ public class TestMongoClient {
 		//获取一个连接
 		MongoClient mongo = new MongoClient("192.168.56.101", 27017);
 		//获取数据库
-		MongoDatabase db = mongo.getDatabase("hanyx");
+		MongoDatabase db = mongo.getDatabase("hanyx");	
 		//获取集合
 		MongoCollection<Document> coll = db.getCollection("users");
 		
@@ -76,6 +82,26 @@ public class TestMongoClient {
 	}
 	
 	/**
+	 * 测试一下根据主键Id查询
+	 */
+	public static void findById() {
+		//获取一个连接
+		MongoClient mongo = new MongoClient("192.168.56.101", 27017);
+		//获取数据库
+		MongoDatabase db = mongo.getDatabase("hanyx");
+		//获取集合
+		MongoCollection<Document> coll = db.getCollection("users");
+		
+		Document doc = coll.find(Filters.eq("_id", new ObjectId("5642a7d53eaf370d9084f65a"))).first();
+		
+		if (doc != null) {
+			System.out.println(doc.get("user_name") + " : " +doc);
+		}
+		
+		mongo.close();
+	}
+	
+	/**
 	 * 测试一下根据条件查询
 	 */
 	public static void findWithCondtion() {
@@ -86,8 +112,29 @@ public class TestMongoClient {
 		//获取集合
 		MongoCollection<Document> coll = db.getCollection("users");
 		
-		
 		MongoCursor<Document> iterator = coll.find(Filters.eq("age", 23)).iterator();
+		
+		while (iterator.hasNext()) {
+			Document doc = iterator.next();
+			System.out.println(doc.get("user_name") + " : " +doc);
+		}
+		iterator.close();
+		
+		mongo.close();
+	}
+	
+	/**
+	 * 测试一下根据多条件查询
+	 */
+	public static void findWithCondtions() {
+		//获取一个连接
+		MongoClient mongo = new MongoClient("192.168.56.101", 27017);
+		//获取数据库
+		MongoDatabase db = mongo.getDatabase("hanyx");
+		//获取集合
+		MongoCollection<Document> coll = db.getCollection("users");
+		
+		MongoCursor<Document> iterator = coll.find(Filters.and(Filters.eq("user_name", "hanyx"),Filters.eq("age", 23))).iterator();
 		
 		while (iterator.hasNext()) {
 			Document doc = iterator.next();
@@ -135,4 +182,48 @@ public class TestMongoClient {
 		
 		mongo.close();
 	}
+	
+	/**
+	 * 分页查询的例子
+	 */
+    public static void findByPage() {
+		//获取一个连接
+		MongoClient mongo = new MongoClient("192.168.56.101", 27017);
+		//获取数据库
+		MongoDatabase db = mongo.getDatabase("hanyx");
+		//获取集合
+		MongoCollection<Document> coll = db.getCollection("sort");
+		//初始化一些数据
+    	findByPageInit(coll);
+    	
+    	//排序
+    	Bson orderBy = new BasicDBObject("value", 1);
+    	//页码
+    	int pageNo = 2;
+    	//页容量
+    	int pageSize = 5;
+    	
+    	//查询
+    	MongoCursor<Document> iterator = coll.find().sort(orderBy)
+    			.skip((pageNo - 1) * pageSize).limit(pageSize).iterator();
+		//遍历输出
+    	while (iterator.hasNext()) {
+			Document doc = iterator.next();
+			System.out.println(doc);
+		}
+		iterator.close();
+		
+    	//删除初始化的数据
+    	coll.drop();
+		mongo.close();
+    }
+    
+    public static void findByPageInit(MongoCollection<Document> coll) {
+		for (int i = 1; i <= 50; i++) {
+			Document doc = new Document();
+			doc.append("name", (char)(64 + i)).append("value", i);
+			coll.insertOne(doc);
+		}
+    }
+
 }
