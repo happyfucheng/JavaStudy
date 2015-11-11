@@ -97,6 +97,7 @@ public class TestMongoClient {
 		
 		mongo.close();
 	}
+	
 	/**
 	 * 测试一下删除数据
 	 */
