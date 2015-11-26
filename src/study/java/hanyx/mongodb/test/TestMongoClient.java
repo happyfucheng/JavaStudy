@@ -2,11 +2,17 @@ package study.java.hanyx.mongodb.test;
 
 import java.util.Date;
 
+import org.bson.BSON;
+import org.bson.BsonDocument;
 import org.bson.Document;
+import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.conversions.Bson;
+import org.bson.json.JsonReader;
 import org.bson.types.ObjectId;
 
 import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
@@ -43,13 +49,15 @@ public class TestMongoClient {
 		MongoDatabase db = mongo.getDatabase("hanyx");	
 		//获取集合
 		MongoCollection<Document> coll = db.getCollection("users");
-		
+
 		//文档
 		Document one = new Document();
+//		one.parse("{"name":"hanyx"}");
 		one.append("user_name", "hanyx").append("age", 23).append("sex", "M").append("create_date", new Date());
 		
 		//文档
 		Document two = new Document();
+
 		two.append("company_name", "AsiaInfo").append("address", "海淀区").append("ceo", "tian");
 		
 		//插入数据
@@ -74,7 +82,7 @@ public class TestMongoClient {
 		
 		if (result != null) {
 			for (Document doc: result) {
-				System.out.println(doc.get("user_name") + " : " +doc);
+				System.out.println(doc.get("user_name") + " : " + doc);
 			}
 		}
 		

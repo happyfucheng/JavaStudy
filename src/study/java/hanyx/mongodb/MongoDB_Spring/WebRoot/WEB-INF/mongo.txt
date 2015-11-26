@@ -1,0 +1,69 @@
+	<!-- MongoDB -->
+	<mongo:mongo host="192.168.56.101" port="27017"></mongo:mongo>
+	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg ref="mongo" />
+		<constructor-arg name="databaseName" value="hanyx" />
+	</bean>
+
+
+	<!-- MongoDB -->
+	<mongo:mongo-client host="192.168.56.101" port="27017"></mongo:mongo-client>
+	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg ref="mongo" />
+		<constructor-arg name="databaseName" value="hanyx" />
+	</bean>
+
+
+
+
+	<mongo:mongo host="192.168.56.101" port="27017"></mongo:mongo>
+	<mongo:db-factory dbname="hanyx" mongo-ref="mongo"/>
+	
+	<bean id="mappingContext" class="org.springframework.data.mongodb.core.mapping.MongoMappingContext"/>
+	
+	<bean id="defaultMongoTypeMapper"
+		class="org.springframework.data.mongodb.core.convert.DefaultMongoTypeMapper">
+		<constructor-arg name="typeKey"><null/></constructor-arg>
+	</bean>
+	
+	<bean id="mappingMongoConverter"
+		class="org.springframework.data.mongodb.core.convert.MappingMongoConverter">
+		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
+		<constructor-arg name="mappingContext" ref="mappingContext"/>
+		<property name="typeMapper" ref="defaultMongoTypeMapper" />
+	</bean>
+	
+	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
+		<constructor-arg name="mongoConverter" ref="mappingMongoConverter"/>
+	</bean>
+
+
+
+
+
+	<!-- MongoDB -->
+	<mongo:mongo-client host="192.168.56.101" port="27017"></mongo:mongo-client>
+	<mongo:db-factory dbname="hanyx" mongo-ref="mongo"/>
+	
+	<bean id="mappingContext" class="org.springframework.data.mongodb.core.mapping.MongoMappingContext"/>
+	
+	<bean id="defaultMongoTypeMapper"
+		class="org.springframework.data.mongodb.core.convert.DefaultMongoTypeMapper">
+		<constructor-arg name="typeKey"><null/></constructor-arg>
+	</bean>
+	
+	<bean id="mappingMongoConverter"
+		class="org.springframework.data.mongodb.core.convert.MappingMongoConverter">
+		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
+		<constructor-arg name="mappingContext" ref="mappingContext"/>
+		<property name="typeMapper" ref="defaultMongoTypeMapper" />
+	</bean>
+	
+	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
+		<constructor-arg name="mongoConverter" ref="mappingMongoConverter"/>
+	</bean>
+
+	<mongo:mongo-client replica-set="192.168.56.101:27000,192.168.56.101:27001,192.168.56.101:27002"></mongo:mongo-client>
+	

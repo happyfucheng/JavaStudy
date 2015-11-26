@@ -1,12 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_45"/>
 	<classpathentry kind="lib" path="lib/ojdbc6.jar"/>
 	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar" sourcepath="E:/maven/m2/ai/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1-sources.jar"/>
 	<classpathentry kind="lib" path="lib/cglib-nodep-2.2.3.jar"/>
 	<classpathentry kind="lib" path="lib/validation-api-1.0.0.GA.jar"/>
 	<classpathentry kind="lib" path="lib/hibernate-validator-4.2.0.Final.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-api-1.7.2.jar"/>
+	<classpathentry kind="lib" path="lib/mongodb/bson-3.1.0.jar" sourcepath="F:/软件备份/工作软件/Mongodb/bson-3.1.0-sources.jar">
+		<attributes>
+			<attribute name="source_encoding" value="UTF-8"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/mongodb/mongodb-driver-3.1.0.jar" sourcepath="F:/软件备份/工作软件/Mongodb/mongodb-driver-3.1.0-sources.jar">
+		<attributes>
+			<attribute name="source_encoding" value="UTF-8"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/mongodb/mongodb-driver-core-3.1.0.jar" sourcepath="F:/软件备份/工作软件/Mongodb/mongodb-driver-core-3.1.0-sources.jar">
+		<attributes>
+			<attribute name="source_encoding" value="UTF-8"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre7"/>
+	<classpathentry kind="lib" path="lib/aviator-2.3.3.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="lib/fel-all-0.7.1.jar"/>
+	<classpathentry kind="lib" path="lib/mvel2-2.2.5.Final.jar"/>
+	<classpathentry kind="lib" path="lib/tools.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
