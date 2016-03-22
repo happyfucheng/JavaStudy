@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<loginMockData>
+	<mLoginBeans>
+		<mLoginBean>
+			<userloginname>17088888888</userloginname>
+			<userPassword>654321</userPassword>
+			<userMAcctBalance>1200.00</userMAcctBalance>
+			<userMAcctLatestExpireDate>2016-01-01T00:00:00.004+08:00
+			</userMAcctLatestExpireDate>
+			<userMAcctLatestExpirePoint>500</userMAcctLatestExpirePoint>
+			<mchtId>201</mchtId>
+			<mchtType>2</mchtType>
+			<mchtName>A虚商</mchtName>
+		</mLoginBean>
+		<mLoginBean>
+			<userloginname>17099999999</userloginname>
+			<userPassword>654321</userPassword>
+			<userMAcctBalance>1200.00</userMAcctBalance>
+			<userMAcctLatestExpireDate>2016-01-01T00:00:00.004+08:00
+			</userMAcctLatestExpireDate>
+			<userMAcctLatestExpirePoint>500</userMAcctLatestExpirePoint>
+			<mchtId>201</mchtId>
+			<mchtType>2</mchtType>
+			<mchtName>A虚商</mchtName>
+		</mLoginBean>
+	</mLoginBeans>
+</loginMockData>
