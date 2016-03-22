@@ -21,7 +21,7 @@ public class ZkClientSlave {
 
 	public ZkClient getZkCli() {
 		if (zkCli == null) {
-			zkCli = new ZkClient("10.1.54.75:2181", 50000);
+			zkCli = new ZkClient("10.1.51.66:2181", 50000);
 		}
 		return zkCli;
 	}

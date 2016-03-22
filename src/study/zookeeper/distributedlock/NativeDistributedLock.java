@@ -26,7 +26,7 @@ public class NativeDistributedLock {
 	// 超时时间
 	private static final int SESSION_TIMEOUT = 50000;
 	// zookeeper server列表
-	private String hosts = "10.1.54.114:2181";
+	private String hosts = "10.1.51.66:2181";
 
 	private ZooKeeper zk = null;
 

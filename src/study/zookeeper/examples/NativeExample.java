@@ -49,7 +49,7 @@ public class NativeExample {
 			CountDownLatch cl = new CountDownLatch(1);
 			
 			// 创建一个Zookeeper实例，第一个参数为目标服务器地址和端口，第二个参数为Session超时时间，第三个为节点变化时的回调方法
-			ZooKeeper zk = new ZooKeeper("10.1.54.114:2181", 5000, new myWatcher(cl));
+			ZooKeeper zk = new ZooKeeper("10.1.51.66:2181", 5000, new myWatcher(cl));
 			
 			cl.await();
 			// 创建一个节点root，数据是mydata,不进行ACL权限控制，节点为永久性的(即客户端shutdown了也不会消失)
